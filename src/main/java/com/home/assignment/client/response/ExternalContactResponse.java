@@ -1,0 +1,16 @@
+package com.home.assignment.client.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ExternalContactResponse {
+    private List<ContactResponse> contacts;
+}
