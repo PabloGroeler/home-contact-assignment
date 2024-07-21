@@ -11,7 +11,9 @@ This project is a Java application that connects to the Contact API to retrieve 
 
 
 ### Maven running
-mvn spring-boot:run will setup the applcation on port 8080.
+`mvn spring-boot:run` will setup the applcation on port 8080.
+For tests, consider the command: `mvn spring-boot:test-run`
+
 This application supports swagger on http://localhost:8080/swagger-ui/index.html#/
 
 ### Docker application setup

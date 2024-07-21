@@ -16,11 +16,4 @@ public class ServiceTestResource {
         headers.add(TOTAL_PAGES, "1");
         return headers;
     }
-
-    protected static HttpHeaders getDefaultInvalidHttpHeaders() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add(TOTAL_PAGES, "-1");
-        return headers;
-    }
-
 }

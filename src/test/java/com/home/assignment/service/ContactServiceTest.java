@@ -7,6 +7,7 @@ import com.home.assignment.model.Contact;
 import com.home.assignment.stub.ExternalContactResponseStub;
 import com.home.assignment.stub.ExternalContactStub;
 import com.home.assignment.utils.ServiceTestResource;
+import feign.FeignException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -19,7 +20,7 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 public class ContactServiceTest extends ServiceTestResource {
@@ -48,6 +49,8 @@ public class ContactServiceTest extends ServiceTestResource {
         when(externalApiClient.getContacts(anyString(), anyInt())).thenReturn(externalContactResponseResponseEntity);
 
         List<Contact> contacts = contactService.getAllContacts();
+
+        verify(externalApiClient, atLeastOnce()).getContacts(anyString(), anyInt());
         assert contacts.size() == 1;
         assert contacts.get(0).getName().equals(ExternalContactStub.TEST_NAME);
         assert contacts.get(0).getEmail().equals(ExternalContactStub.TEST_EMAIL);
