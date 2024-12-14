@@ -24,8 +24,8 @@ public class ContactController {
 
     @GetMapping
     @Operation(
-            summary = "Searches for articles based on the filters provided.",
-            description = "Searches on all available articles based on the filters provided in a paginated response with maximum of 5 articles per request.",
+            summary = "Searches for contact based on the filters provided.",
+            description = "Searches on all available contact based on the filter.",
             responses = {
                     @ApiResponse(responseCode = "200", description = "Success", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Contact[].class))),
                     @ApiResponse(responseCode = "400", description = "Bad Request")
